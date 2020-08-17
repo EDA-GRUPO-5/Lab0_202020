@@ -141,8 +141,10 @@ def main():
                     print("La lista esta vacía")    
                 else: print("La lista tiene "+str(len(lista))+" elementos")
             elif int(inputs[0])==3: #opcion 3
+                loadCSVFile("Data/MoviesCastingRaw-small.csv",lista)
                 criteria =input('Ingrese el criterio de búsqueda\n')
-                counter=countElementsFilteredByColumn(criteria, "nombre", lista) #filtrar una columna por criterio  
+                column= input("Ingrese la columna de búsqueda\n")
+                counter=countElementsFilteredByColumn(criteria, column, lista) #filtrar una columna por criterio  
                 print("Coinciden ",counter," elementos con el criterio: ", criteria  )
             elif int(inputs[0])==4: #opcion 4
                 loadCSVFile("Data/MoviesCastingRaw-small.csv", lista2)
